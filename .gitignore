@@ -9,8 +9,10 @@
 !/public/images/avatars/default.jpg
 /public/images/hotels/*/
 !/public/images/hotels/default.jpg
-/public/images/rooms/*/
+/public/images/rooms/*
+!/public/images/rooms/default.jpg
 /public/images/reviews/*/
+/public/images/social-media/*
 
 # Ignore default images
 /public/images/hotels/default2.jpg
