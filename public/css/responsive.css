@@ -1,0 +1,231 @@
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        margin: 0.5rem -0.75rem 0;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid rgba(91, 155, 213, 0.2);
+    }
+
+    .navbar-nav {
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-right {
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(91, 155, 213, 0.2);
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .auth-buttons,
+    .dropdown {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .user-dropdown {
+        width: 100%;
+    }
+
+    .auth-buttons .btn {
+        flex: 1;
+    }
+
+    .user-profile-link {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+
+    .nav-right .btn-outline-light {
+        width: 100%;
+        text-align: center;
+        color: #5b9bd5;
+        border-color: #5b9bd5;
+    }
+
+    .login-container {
+        flex-direction: column-reverse;
+    }
+
+    .form-column,
+    .brand-column {
+        flex: 1;
+        width: 100%;
+        justify-content: center;
+        padding-right: 2rem;
+        padding-top: 2rem;
+        padding-left: 2rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .brand-column {
+        border-radius: 0;
+    }
+
+    .brand-title {
+        font-size: 2.5rem;
+    }
+
+    .brand-features {
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ring {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .profile-container .card-body {
+        padding: 1.5rem;
+    }
+
+    .avatar-lg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .tab-content {
+        padding: 1.25rem;
+    }
+
+    .booking-item {
+        padding: 1rem;
+    }
+
+    .search-form {
+        padding: 1rem;
+    }
+
+    .hotel-detail-img {
+        height: 250px;
+    }
+
+    .amenity-icon {
+        margin-right: 1rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .site-footer {
+        padding: 2rem 0 1rem;
+        text-align: center;
+    }
+
+    .footer-about {
+        margin: 0 auto 1.5rem;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-links {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-newsletter .input-group {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    header.site-header {
+        width: 100vw;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        margin-top: 0;
+    }
+
+    /* Profile */
+    .profile-container .nav-tabs .nav-link {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.8rem;
+    }
+
+    .avatar-lg {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hotel-card,
+    .city-card {
+        margin-bottom: 1rem;
+    }
+
+    .room-image {
+        height: 150px;
+    }
+
+    .booking-item {
+        padding: 0.75rem;
+    }
+
+    /* Forms */
+    .search-form .form-control,
+    .search-form .form-select {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.5rem;
+    }
+
+    .search-form .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .preloader-icon span {
+        width: 12px;
+        height: 12px;
+    }
+
+    .preloader-text {
+        font-size: 14px;
+    }
+}

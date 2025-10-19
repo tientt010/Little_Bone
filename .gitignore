@@ -1,0 +1,134 @@
+# Thư mục không cần theo dõi
+/tests/
+/vidumau/
+/logs/*
+!/logs/.gitkeep
+
+# User uploaded files (keep structure but not content)
+/public/images/avatars/*
+!/public/images/avatars/default.jpg
+/public/images/hotels/*/
+!/public/images/hotels/default.jpg
+/public/images/rooms/*/
+/public/images/reviews/*/
+
+# Ignore default images
+/public/images/hotels/default2.jpg
+/public/images/cities/default2.jpg
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.buildpath
+
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Cache & temp files
+*.cache
+*.tmp
+*.log
+*.bak
+*~
+
+# Config files không cần thiết
+/config/RewriteEngine*
+/config/*.rb
+
+# Composer
+/vendor/
+composer.lock
+composer.phar
+
+# Node modules (nếu có)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Docker
+.docker/
+docker-compose.override.yml
+.dockerignore.bak
+
+# Database dumps
+*.sql
+*.sqlite
+*.db
+/database/backups/
+
+# Build files
+/build/
+/dist/
+
+
+# Session files
+/sessions/
+/tmp/
+
+# Backup files
+*.backup
+*.old
+*.orig
+
+# OS generated files
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# PHPStorm
+.phpstorm.meta.php
+_ide_helper.php
+
+# Windows
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux
+.directory
+.Trash-*
+
+# Docker local data
+docker-compose.override.yml
+.docker/
+
+# PHP error logs
+php_errors.log
+error_log
+
+# Session storage
+/sessions/
+/storage/sessions/
+
+# Sensitive credentials (double check)
+*.pem
+*.key
+*.crt
+*_rsa
+*_rsa.pub
+/config/credentials.php

@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Kiểm tra nếu là file thực tế thì bỏ qua
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # Kiểm tra nếu là thư mục thực tế thì bỏ qua
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Chuyển tất cả request khác đến index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+
+</IfModule>
+
+# Debug
+
+php_flag display_errors on
+php_value error_reporting 32767
+
+<FilesMatch "\.(env|config|htaccess|git)">
+Order allow,deny
+Deny from all
+</FilesMatch>

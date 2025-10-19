@@ -1,0 +1,830 @@
+/* Buttons - Các nút */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #5b9bd5; /* Pastel blue */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(91, 155, 213, 0.2);
+}
+
+.btn-primary:hover {
+    background: #3d7bb7; /* Darker pastel blue */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(91, 155, 213, 0.3);
+}
+
+.btn-outline-primary {
+    border: 1px solid #5b9bd5;
+    color: #5b9bd5;
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: rgba(91, 155, 213, 0.1);
+    color: #3d7bb7;
+}
+
+.btn-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Thẻ hiển thị thông tin */
+.card {
+    border: none;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    border: 1px solid rgba(189, 224, 254, 0.3);
+    overflow: hidden;
+    position: relative;
+    color: #000000; /* Add default text color for cards */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(189, 224, 254, 0.3),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(91, 155, 213, 0.15);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-header {
+    background-color: rgba(189, 224, 254, 0.1);
+    border-bottom: 1px solid rgba(189, 224, 254, 0.3);
+    border-radius: 12px 12px 0 0 !important;
+    padding: 1.5rem;
+}
+
+.promo-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-left: 4px solid #5b9bd5;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(91, 155, 213, 0.1) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.promo-card:hover::after {
+    opacity: 1;
+}
+
+.promo-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-card .card-title {
+    color: #3d7bb7;
+    font-weight: 600;
+}
+
+.promo-code {
+    margin-top: auto;
+    background: rgba(189, 224, 254, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #5b9bd5;
+    font-weight: 500;
+    text-align: center;
+}
+
+.promo-expires {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 8px;
+    text-align: right;
+}
+
+.promo-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-left: 4px solid #5b9bd5;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.promo-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.promo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.promo-card:hover .promo-image img {
+    transform: scale(1.05);
+}
+
+.promo-card-banner {
+    border: none;
+    border-radius: 10px;
+}
+
+.promo-card-banner .promo-image {
+    height: 250px;
+    border-radius: 10px;
+}
+
+.promo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.1),
+        transparent
+    );
+    padding: 20px 15px;
+    color: white;
+    text-align: left;
+}
+
+.promo-overlay h5 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.promo-code-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Carousel Card Container Styling */
+.carousel-card-container {
+    margin-bottom: 30px;
+    position: relative;
+    padding: 0 40px;
+    overflow: hidden;
+}
+
+.carousel-card-container .carousel-inner {
+    padding-bottom: 50px;
+    overflow: visible;
+}
+
+.carousel-card-container .carousel-indicators {
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+.carousel-card-container .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #a2d2ff;
+    opacity: 0.6;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.carousel-card-container .carousel-indicators button.active {
+    background-color: #5b9bd5;
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 5px rgba(91, 155, 213, 0.5);
+}
+
+.carousel-card-container .carousel-control-prev,
+.carousel-card-container .carousel-control-next {
+    width: 36px;
+    height: 36px;
+    top: calc(50% - 25px);
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    transition: all 0.2s ease;
+}
+
+.carousel-card-container .carousel-control-prev {
+    left: 5px;
+}
+
+.carousel-card-container .carousel-control-next {
+    right: 5px;
+}
+
+.carousel-card-container .carousel-control-prev-icon,
+.carousel-card-container .carousel-control-next-icon {
+    width: 18px;
+    height: 18px;
+    filter: invert(60%) sepia(20%) saturate(800%) hue-rotate(180deg);
+}
+
+.carousel-card-container .carousel-control-prev:hover,
+.carousel-card-container .carousel-control-next:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-card-container .carousel-item {
+    padding: 0 5px;
+}
+
+.carousel-card-container .row {
+    margin: 0 -10px;
+}
+
+.promo-card-banner {
+    transition: all 0.3s ease;
+    position: relative;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    margin: 0 5px;
+}
+
+.promo-card-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.promo-card-banner .promo-image {
+    height: 180px;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.promo-card-banner .promo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.promo-card-banner:hover .promo-image img {
+    transform: scale(1.03);
+}
+
+.promo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.2),
+        transparent
+    );
+    padding: 20px 15px;
+    color: white;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.promo-overlay h5 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.promo-code-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.promo-card-banner:hover .promo-code-badge {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .carousel-card-container .promo-image {
+        height: 160px;
+    }
+
+    .carousel-card-container .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-card-container {
+        padding: 0 15px;
+        padding: 0 20px;
+    }
+
+    .carousel-card-container .carousel-control-prev,
+    .carousel-card-container .carousel-control-next {
+        width: 32px;
+        height: 32px;
+    }
+
+    .carousel-card-container .carousel-indicators button {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+
+    .promo-card-banner .promo-image {
+        height: 160px;
+        height: 140px;
+    }
+
+    .carousel-card-container .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Thông báo */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    animation: fadeIn 0.5s ease;
+}
+
+.alert-danger {
+    background: #feebee;
+    color: #b71c1c;
+    border: 1px solid #ffcdd2;
+}
+
+.alert-success {
+    background: #e8f5e9;
+    color: #1b5e20;
+    border: 1px solid #c8e6c9;
+}
+
+/* Forms - Biểu mẫu */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid rgba(189, 224, 254, 0.5);
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.form-control:focus {
+    border-color: #5b9bd5;
+    box-shadow: 0 0 0 0.2rem rgba(91, 155, 213, 0.25);
+    transition: all 0.3s ease;
+}
+
+.was-validated .form-control:invalid:focus,
+.form-control.is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Form check - Checkbox và radio */
+.form-check-input {
+    transition: all 0.2s ease;
+}
+
+.form-check-input:checked {
+    transform: scale(1.1);
+}
+
+/* Navbar toggler - Nút toggle cho mobile */
+.navbar-toggler {
+    border: 1px solid rgba(91, 155, 213, 0.3);
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Avatar - Ảnh đại diện */
+.header-avatar-container {
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid rgba(91, 155, 213, 0.4);
+    box-shadow: 0 0 5px rgba(91, 155, 213, 0.2);
+    transition: all 0.2s ease;
+}
+
+.header-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Liên kết hồ sơ người dùng */
+.user-profile-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.3rem 0.7rem 0.3rem 0.5rem;
+    border-radius: 20px;
+    background-color: rgba(189, 224, 254, 0.2);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(91, 155, 213, 0.2);
+    margin-right: 10px;
+}
+
+.user-profile-link:hover {
+    background-color: rgba(189, 224, 254, 0.3);
+    transform: translateY(-2px);
+}
+
+.user-profile-link:hover .header-avatar-container {
+    border-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+.user-name {
+    color: #000000;
+    font-weight: 500;
+    font-size: 0.9rem;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 0.6rem;
+}
+
+/* Tabs - Thẻ tab */
+.nav-tabs {
+    border-bottom: 1px solid rgba(189, 224, 254, 0.4);
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 0.75rem 1rem 0;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #000000;
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+}
+
+.nav-tabs .nav-link.active {
+    color: #000000;
+    font-weight: 600;
+    background: rgba(189, 224, 254, 0.2);
+    border-top: 2px solid #000000;
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    color: #3d7bb7;
+    background-color: rgba(189, 224, 254, 0.1);
+}
+
+.tab-content {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid rgba(189, 224, 254, 0.4);
+    border-top: none;
+    color: #000000;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.preloader-inner {
+    text-align: center;
+}
+
+.preloader-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.preloader-icon span {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #5b9bd5;
+    display: inline-block;
+    animation: preloader-bounce 0.6s infinite alternate;
+}
+
+.preloader-icon span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.preloader-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 1px;
+}
+
+/* Destination Card Styling */
+.destination-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.destination-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.destination-card:hover .destination-image img {
+    transform: scale(1.05);
+}
+
+.destination-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.destination-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Region destinations list styling */
+.destination-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.destination-card .destination-image {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 100%;
+    object-fit: cover;
+    min-height: 220px;
+}
+
+.destination-card .card-title {
+    font-weight: 600;
+    color: #3d7bb7;
+    margin-bottom: 0.5rem;
+}
+
+.destination-card .location {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.destination-card .hotel-count {
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.stats-banner {
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.stats-banner h4 {
+    font-weight: 700;
+    color: #3d7bb7;
+    margin-bottom: 0.25rem;
+}
+
+.stats-banner p {
+    margin-bottom: 0;
+    color: #6c757d;
+}
+
+.region-selector .dropdown-item.active {
+    background-color: #3d7bb7;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .destination-image {
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .destination-image {
+        height: 140px;
+    }
+}
+
+.regions-dropdown {
+    max-height: 300px;
+    overflow-y: auto;
+    width: 150px;
+    padding: 10px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: fixed !important; /* Sử dụng position fixed để thoát khỏi ràng buộc của container */
+    z-index: 9999 !important;
+}
+
+.regions-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.regions-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.regions-dropdown::-webkit-scrollbar-thumb {
+    background: #a2d2ff;
+    border-radius: 10px;
+}
+
+.regions-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #5b9bd5;
+}
+
+.regions-dropdown .dropdown-item {
+    padding: 8px 15px;
+    transition: background-color 0.2s;
+}
+
+.regions-dropdown .dropdown-item:hover {
+    background-color: #edf6ff;
+    color: #3d7bb7;
+}
+
+.navbar .dropdown-menu {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.navbar .nav-item.dropdown {
+    position: relative !important;
+}
+
+.navbar .dropdown-menu {
+    margin-top: 0;
+    overflow: visible !important;
+}
+
+/* Thêm style cho dropdown hiển thị ở ngoài container */
+.travel-destinations-dropdown .dropdown-menu {
+    position: fixed !important;
+    transform: none !important;
+    will-change: auto !important;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+header.site-header {
+    overflow: visible !important;
+}
+
+.navbar .nav-item.dropdown {
+    position: static !important;
+}
+
+.navbar .dropdown-menu {
+    margin-top: 0;
+}
+
+/* Thay đổi style cho dropdown hiển thị ở ngoài container */
+.travel-destinations-dropdown .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: auto !important;
+    transform: none !important;
+    will-change: auto !important;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Đảm bảo header không giới hạn dropdown */
+header.site-header {
+    overflow: visible !important;
+}

@@ -1,0 +1,202 @@
+/* Main CSS file - Tập tin CSS chính
+ * Import tất cả các file CSS thành phần
+ * File này cần được liên kết trong trang web
+ */
+
+/* @import "base.css"; */
+/* @import "layout.css"; */
+@import "components.css";
+@import "profile.css";
+/* @import "hotels.css"; */
+@import "search.css";
+@import "animations.css";
+/* @import "utils.css"; */
+@import "responsive.css";
+@import "footer.css";
+
+/* Global text color override to ensure consistency */
+body,
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+td,
+th,
+label,
+input,
+textarea,
+select {
+    color: #000000;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
+}
+
+/* Only preserve specific hover effects */
+a:hover,
+.nav-link:hover,
+.footer-links a:hover {
+    color: #3d7bb7;
+}
+
+/* Preserve white text in buttons */
+.btn-primary,
+.btn-primary:hover,
+.search-card.button button {
+    color: #ffffff;
+}
+
+/* Hiệu ứng rung lắc khi thêm vào giỏ hàng */
+@keyframes cartShake {
+    0% {
+        transform: rotate(0);
+    }
+    15% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    45% {
+        transform: rotate(-5deg);
+    }
+    60% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/* Animation khi thêm phòng vào giỏ hàng */
+@keyframes cartShake {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cart-shake {
+    animation: cartShake 0.5s ease;
+}
+
+.cart-shake {
+    animation: cartShake 0.5s ease;
+}
+
+/* CSS cho icon giỏ hàng */
+.floating-cart {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    z-index: 1050;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+.cart-icon-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+#cart-icon {
+    color: #555;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+/* Kiểu dáng khi có phòng được chọn */
+#cart-icon.has-items {
+    color: #fff;
+}
+
+.cart-icon-container.active {
+    background-color: #4caf50;
+}
+
+/* Badge hiển thị số lượng phòng */
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.cart-badge.empty {
+    background-color: #888;
+    transform: scale(0.85);
+}
+
+/* Hiệu ứng pulse khi giỏ hàng trống rỗng */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .floating-cart {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    #cart-icon {
+        font-size: 20px;
+    }
+}
+
+/* Các style bổ sung nếu cần thiết */

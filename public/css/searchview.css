@@ -1,0 +1,237 @@
+/* Thiết kế cho container hình ảnh */
+.hotel-image-container {
+    height: 100%;
+    max-height: 220px;
+    overflow: hidden;
+    border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.hotel-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Card khách sạn */
+.hotel-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+}
+
+.hotel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Mô tả khách sạn */
+.hotel-description {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Giá phòng */
+.price-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #3d7bb7;
+}
+
+/* Nút yêu thích */
+.favorite-btn {
+    padding: 0.375rem 0.75rem;
+}
+
+.favorite-btn.active {
+    background-color: #f8d7da;
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .hotel-image-container {
+        max-height: 180px;
+        border-radius: 0.375rem 0.375rem 0 0;
+    }
+
+    .price-value {
+        font-size: 1.1rem;
+    }
+}
+
+/* Kiểu dáng cho phần khuyến mãi */
+.promotions-section {
+    padding: 8px 10px;
+    background-color: #f8fcf7;
+    border-radius: 8px;
+}
+
+.promotion-item {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(40, 167, 69, 0.1);
+    padding: 3px 8px;
+    border-radius: 20px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.promo-title {
+    font-size: 0.85rem;
+    color: #444;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.show-more-promos {
+    padding: 2px 6px;
+    font-size: 0.75rem;
+}
+
+/* Kiểu dáng cho modal khuyến mãi */
+.promotion-banner {
+    height: 140px;
+    overflow: hidden;
+}
+
+.promotion-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hiệu ứng hover cho card khuyến mãi */
+#promotionsContainer .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#promotionsContainer .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Loại bỏ hiệu ứng overlay từ modal */
+.modal-backdrop {
+    display: none !important;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1055;
+    overflow-y: auto !important;
+}
+
+body.modal-open {
+    overflow: auto !important;
+    padding-right: 0 !important;
+}
+
+/* Đảm bảo modal hiển thị đúng */
+.modal-dialog {
+    z-index: 1056;
+    margin: 1.75rem auto;
+}
+
+/* Kiểu dáng cho container hình ảnh mới */
+.hotel-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-image-container {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 0.375rem 0 0 0;
+    position: relative;
+}
+
+.hotel-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hotel-main-image:hover {
+    opacity: 0.9;
+}
+
+/* Thumbnail gallery */
+.thumbnail-gallery {
+    margin-top: 2px;
+    height: 50px;
+}
+
+.thumbnail {
+    height: 48px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+}
+
+.thumbnail.active {
+    border-color: #3d7bb7;
+    opacity: 1;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .main-image-container {
+        height: 140px;
+        border-radius: 0.375rem 0.375rem 0 0;
+    }
+
+    .thumbnail-gallery {
+        height: 40px;
+    }
+
+    .thumbnail {
+        height: 38px;
+    }
+}
+
+/* Cải thiện sidebar bộ lọc cố định */
+.filter-sidebar {
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    z-index: 100;
+}
+
+/* Đảm bảo responsive cho mọi kích thước màn hình */
+@media (max-width: 991.98px) {
+    .filter-sidebar {
+        max-height: 70vh;
+    }
+}
+
+/* Loại bỏ phần style cũ dành cho sticky-top */
+@media (min-width: 992px) {
+    .sticky-top {
+        position: sticky;
+        top: 20px;
+    }
+}

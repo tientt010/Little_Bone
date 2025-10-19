@@ -1,0 +1,158 @@
+/* Hiệu ứng cơ bản */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+/* Hiệu ứng phát sáng nhấp nháy */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(245, 166, 35, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(245, 166, 35, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(245, 166, 35, 0.6);
+    }
+}
+
+.pulse-glow {
+    animation: pulse-glow 1.5s infinite;
+}
+
+/* Hiệu ứng nổi */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Hiệu ứng lấp lánh */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Hiệu ứng nút hover */
+.btn-hover-effect {
+    transition: all 0.3s ease;
+}
+
+.btn-hover-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hiệu ứng phát sáng cho tiêu đề thương hiệu */
+@keyframes glowing {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+            0 0 30px rgba(255, 215, 0, 0.6);
+    }
+}
+
+.title-glow {
+    animation: glowing 2s ease-in-out infinite alternate;
+}
+
+@keyframes preloader-bounce {
+    0%,
+    100% {
+        transform: scale(0.7);
+        background-color: #bde0fe;
+    }
+    50% {
+        transform: scale(1);
+        background-color: #5b9bd5;
+    }
+}
+
+@keyframes preloader-fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton {
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(136, 184, 252, 0.2);
+    background-image: linear-gradient(
+        90deg,
+        rgba(136, 184, 252, 0.2),
+        rgba(136, 184, 252, 0.4),
+        rgba(136, 184, 252, 0.2)
+    );
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+}

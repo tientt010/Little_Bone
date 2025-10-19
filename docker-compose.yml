@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+    web:
+        image: tiennq04/little-bone:latest # Thay tientt010 bằng Docker Hub username của bạn
+        container_name: little_bone_web
+        ports:
+            - "80:80"
+        depends_on:
+            - db
+        networks:
+            - little_bone_network
+        environment:
+            - DB_HOST=db
+            - DB_NAME=little_bone
+            - DB_USER=root
+            - DB_PASS=rootpassword
+        restart: always
+
+    db:
+        image: mysql:8.0
+        container_name: little_bone_db
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpassword
+            MYSQL_DATABASE: little_bone
+        volumes:
+            - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+            - db_data:/var/lib/mysql
+        networks:
+            - little_bone_network
+        restart: always
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: little_bone_phpmyadmin
+        ports:
+            - "8080:80"
+        environment:
+            PMA_HOST: db
+            MYSQL_ROOT_PASSWORD: rootpassword
+        depends_on:
+            - db
+        networks:
+            - little_bone_network
+        restart: always
+
+volumes:
+    db_data:
+
+networks:
+    little_bone_network:
+        driver: bridge
