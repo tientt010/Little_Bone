@@ -25,7 +25,7 @@ if (!file_exists($logFile)) {
 ini_set('log_errors', 1);
 ini_set('error_log', $logFile);
 
-// Simple visitor log: only log page requests, skip static files (CSS/JS/images)
+// Log visitor IPs
 $requestUri = $_SERVER['REQUEST_URI'] ?? '';
 $isStaticFile = preg_match('/\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot)$/i', $requestUri);
 if (!$isStaticFile) {
@@ -34,26 +34,22 @@ if (!$isStaticFile) {
 }
 
 
-// Load core files
 require_once CORE_PATH . '/Router.php';
 require_once CORE_PATH . '/ErrorHandler.php';
 
-// Error handling
 error_reporting(E_ALL);
 ini_set('display_errors', DEBUG_MODE ? 1 : 0);
 
-// autoloading classes - with case-insensitive namespace handling for Linux compatibility
 spl_autoload_register(function ($class) {
     $basePath = ROOT_PATH;
 
-    // Split namespace and class name
     $parts = explode('\\', $class);
 
-    // Convert namespace parts to lowercase, but keep class name as-is
+
     if (count($parts) > 1) {
-        $className = array_pop($parts); // Get class name (last part)
-        $namespaceParts = array_map('strtolower', $parts); // Lowercase namespace
-        $parts = array_merge($namespaceParts, [$className]); // Merge back
+        $className = array_pop($parts);
+        $namespaceParts = array_map('strtolower', $parts);
+        $parts = array_merge($namespaceParts, [$className]);
     }
 
     $classPath = implode(DIRECTORY_SEPARATOR, $parts) . '.php';
@@ -64,7 +60,6 @@ spl_autoload_register(function ($class) {
         return true;
     }
 
-    // Fallback: Try with original case
     $classPath = str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
     $filePath = $basePath . DIRECTORY_SEPARATOR . $classPath;
 
